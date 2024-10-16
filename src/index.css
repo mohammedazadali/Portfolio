@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  /* font-family: "Montserrat", sans-serif; */
+}
+
+section{
+  overflow: hidden;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+
+.linear-gradient-sekerliyogurtt-text{
+  background: -webkit-linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.background-gradient{
+  background-image: linear-gradient(319deg,#dbf26e 0%,#61fa74 37%,#1cfdd6 100%);;
+}
+
+.btn-gradient{
+  background:linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.mob-nav{
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  transition:0.5s all;
+}
+.mob-nav.mob-active{
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  transition:0.5s all;
+}
+
+.message {
+  animation: movebtn 2s linear infinite;
+  transition: all cubic-bezier(0.39, 0.575, 0.565, 1) linear;
+}
+
+
+.nav-links:hover~.nav-linkline{
+  width: 100%;
+}
+
+/* App.css */
+
+/* Line split animation */
+.line-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  z-index: 40; /* Make sure lines are on top of the main content */
+}
+
+.line {
+  background-color: #000; /* Adjust color based on your theme */
+  height: 10px; /* Thickness of the line */
+  width: 0%; /* Initial width for GSAP animation */
+  margin: 0 auto; /* Center lines horizontally */
+}
+
+/* Main content animation */
+.main-content {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s ease-in-out;
+}
+
+
+
+
+@keyframes movebtn {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px); /* Move up */
+  }
+  100% {
+    transform: translateY(0px); /* Return to the original position */
+  }
+}
